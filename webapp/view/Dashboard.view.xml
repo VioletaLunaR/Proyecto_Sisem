@@ -1,0 +1,48 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.chart" xmlns:data="sap.chart.data" controllerName="com.sap.build.standard.inventoryDashboard.controller.Dashboard">
+	<Page title="Reportes" showHeader="true" showFooter="true" showNavButton="false">
+		<content>
+			<SegmentedButton width="auto" enabled="true" visible="true" class="sapUiResponsiveMargin">
+				<items>
+					<SegmentedButtonItem icon="sap-icon://future" text="Nueva medida" width="auto" enabled="true" press="_onSegmentedButtonItemPress"/>
+				</items>
+			</SegmentedButton>
+			<ObjectHeader intro="" title="{Name}" icon="{Images}" number="{path: 'Time', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" numberUnit="{TUnits}" numberState="None" backgroundDesign="Transparent" condensed="false" visible="true">
+				<attributes>
+                    <ObjectAttribute title="Precio (COP)" text="{path: 'Cost', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>
+                    <ObjectAttribute title="Costo fase 1 (COP)" text="{path: 'phase1', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>
+                    <ObjectAttribute title="Costo fase 2 (COP)" text="{path: 'phase2', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>
+                    <ObjectAttribute title="Costo fase 3 (COP)" text="{path: 'phase3', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>
+                    <ObjectAttribute title="Costo fase 4 (COP)" text="{path: 'phase4', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>
+                    <ObjectAttribute title="Costo fase 5 (COP)" text="{path: 'phase5', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>
+                    <ObjectAttribute title="Costo producción (COP)" text="{path: 'totalCost', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" active="false" visible="true"/>	
+				</attributes>
+				<statuses/>
+				<markers/>
+			</ObjectHeader>
+			<Button text="Filtrar" type="Default" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiLargeMarginBegin" press="_onButtonPress"/>
+			<Button text="Ordenar" type="Default" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiTinyMarginBegin" press="_onButtonPress1"/>
+			<Button text="Agrupar" type="Default" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiTinyMarginBegin" press="_onButtonPress2"/>
+			<chart:Chart id="sap_IconTabBar_Page_0-content-sap_chart_StackedColumnChart-1606414724064" width="100%" height="450px" visibleDimensions="__metadata/uri" visibleMeasures="phase1,phase2,phase3,phase4,phase5" vizProperties="{staticDataModel>/sap_IconTabBar_Page_0-content-sap_chart_StackedColumnChart-1606414724064/vizProperties}" chartType="stacked_column" selectionMode="Single" uiConfig="{}">
+				<chart:dimensions>
+					<data:Dimension name="__metadata/uri" label="Fecha de producción de máquina" role="category" textProperty="date"/>
+				</chart:dimensions>
+				<chart:measures>
+					<data:Measure name="phase1" label="Fase 1: Corte" role="axis4"/>
+					<data:Measure name="phase2" label="Fase 2: Pulir" role="axis1"/>
+					<data:Measure name="phase3" label="Fase 3: Ensamble" role="axis2"/>
+					<data:Measure name="phase4" label="Fase 4: Pintura" role="axis1"/>
+					<data:Measure name="phase5" label="Fase 5: Prueba" role="axis1"/>
+				</chart:measures>
+			</chart:Chart>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="auto" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="" type="Default" icon="sap-icon://action" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+	</Page>
+</mvc:View>

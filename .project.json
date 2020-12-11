@@ -1,0 +1,19 @@
+{
+	"dataBinding": {
+		"/webapp/view/1472700396089_S0.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/Dashboard.view.xml": {
+			"entitySet": "/MachinesSet"
+		},
+		"/webapp/view/Measure.view.xml": {
+			"entitySet": "/MachinesSet"
+		},
+		"/webapp/view/QuickView1.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/Dialog1.view.xml": {
+			"entitySet": ""
+		}
+	}
+}

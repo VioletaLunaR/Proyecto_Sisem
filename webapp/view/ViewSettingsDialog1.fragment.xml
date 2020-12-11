@@ -1,0 +1,96 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<ViewSettingsDialog>
+		<filterItems>
+			<ViewSettingsCustomItem text="Día"
+				filterCount="{parts:[{path:'/date/vValueLT'}, {path:'/date/vValueGT'}], formatter:'.filterCountFormatter'}">
+				<customControl>
+					<l:VerticalLayout width="100%">
+						<Toolbar>
+							<Label width="25%" text="Before" class="sapUiSmallMarginBegin"/>
+							<DatePicker width="33%" value="{path: '/date/vValueLT'}" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"/>
+						</Toolbar>
+						<Toolbar>
+							<Label width="25%" text="After" class="sapUiSmallMarginBegin"/>
+							<DatePicker width="33%" value="{path: '/date/vValueGT'}" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd"/>
+						</Toolbar>
+					</l:VerticalLayout>
+				</customControl>
+			</ViewSettingsCustomItem>
+			<ViewSettingsCustomItem text="Fase 1: Corte"
+				filterCount="{parts:[{path:'/phase1/vValueLT'}, {path:'/phase1/vValueGT'}], formatter:'.filterCountFormatter'}">
+				<customControl>
+					<l:VerticalLayout width="100%">
+						<Toolbar>
+							<Label width="25%" text="Less than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase1/vValueLT'}"/>
+						</Toolbar>
+						<Toolbar>
+							<Label width="25%" text="More than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase1/vValueGT'}"/>
+						</Toolbar>
+					</l:VerticalLayout>
+				</customControl>
+			</ViewSettingsCustomItem>
+			<ViewSettingsCustomItem text="Fase 2: Pulir"
+				filterCount="{parts:[{path:'/phase2/vValueLT'}, {path:'/phase2/vValueGT'}], formatter:'.filterCountFormatter'}">
+				<customControl>
+					<l:VerticalLayout width="100%">
+						<Toolbar>
+							<Label width="25%" text="Less than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase2/vValueLT'}"/>
+						</Toolbar>
+						<Toolbar>
+							<Label width="25%" text="More than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase2/vValueGT'}"/>
+						</Toolbar>
+					</l:VerticalLayout>
+				</customControl>
+			</ViewSettingsCustomItem>
+			<ViewSettingsCustomItem text="Fase 3: Ensamble"
+				filterCount="{parts:[{path:'/phase3/vValueLT'}, {path:'/phase3/vValueGT'}], formatter:'.filterCountFormatter'}">
+				<customControl>
+					<l:VerticalLayout width="100%">
+						<Toolbar>
+							<Label width="25%" text="Less than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase3/vValueLT'}"/>
+						</Toolbar>
+						<Toolbar>
+							<Label width="25%" text="More than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase3/vValueGT'}"/>
+						</Toolbar>
+					</l:VerticalLayout>
+				</customControl>
+			</ViewSettingsCustomItem>
+			<ViewSettingsCustomItem text="Fase 4: Pintura"
+				filterCount="{parts:[{path:'/phase4/vValueLT'}, {path:'/phase4/vValueGT'}], formatter:'.filterCountFormatter'}">
+				<customControl>
+					<l:VerticalLayout width="100%">
+						<Toolbar>
+							<Label width="25%" text="Less than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase4/vValueLT'}"/>
+						</Toolbar>
+						<Toolbar>
+							<Label width="25%" text="More than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase4/vValueGT'}"/>
+						</Toolbar>
+					</l:VerticalLayout>
+				</customControl>
+			</ViewSettingsCustomItem>
+			<ViewSettingsCustomItem text="Fase 5: Prueba"
+				filterCount="{parts:[{path:'/phase5/vValueLT'}, {path:'/phase5/vValueGT'}], formatter:'.filterCountFormatter'}">
+				<customControl>
+					<l:VerticalLayout width="100%">
+						<Toolbar>
+							<Label width="25%" text="Less than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase5/vValueLT'}"/>
+						</Toolbar>
+						<Toolbar>
+							<Label width="25%" text="More than" class="sapUiSmallMarginBegin"/>
+							<Input width="33%" value="{path: '/phase5/vValueGT'}"/>
+						</Toolbar>
+					</l:VerticalLayout>
+				</customControl>
+			</ViewSettingsCustomItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

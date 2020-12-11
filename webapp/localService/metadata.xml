@@ -1,0 +1,99 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="d235e02ec3cb2400148286ba" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityContainer Name="d235e02ec3cb2400148286ba_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="MachinesSet" EntityType="d235e02ec3cb2400148286ba.Machines" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<AssociationSet Name="MachinesPartOfParts" Association="d235e02ec3cb2400148286ba.MachinesPartOfParts" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="MachinesSet" Role="FromRole_MachinesPartOfParts"/>
+					<End EntitySet="PartsSet" Role="ToRole_MachinesPartOfParts"/>
+				</AssociationSet>
+				<AssociationSet Name="MachinesmesuresMeasure" Association="d235e02ec3cb2400148286ba.MachinesmesuresMeasure" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="MachinesSet" Role="FromRole_MachinesmesuresMeasure"/>
+					<End EntitySet="MeasureSet" Role="ToRole_MachinesmesuresMeasure"/>
+				</AssociationSet>
+				<EntitySet Name="PartsSet" EntityType="d235e02ec3cb2400148286ba.Parts" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="MeasureSet" EntityType="d235e02ec3cb2400148286ba.Measure" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+			</EntityContainer>
+			<EntityType Name="Machines" sap:pdm-semantics="business-data">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Images" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Images"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="Cost" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Quanity"/>
+				<Property Name="Units" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Units"/>
+				<Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+				<Property Name="Time" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Measure\&quot;,\&quot;navPropId\&quot;:\&quot;mesures\&quot;,\&quot;navPropOp\&quot;:\&quot;mean\&quot;,\&quot;propertyId\&quot;:\&quot;total\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;navPropName\&quot;:\&quot;mesures\&quot;,\&quot;entityName\&quot;:\&quot;Measure\&quot;,\&quot;propertyName\&quot;:\&quot;total\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;5fc7be01c1a6dc6c27f552f2&quot;,&quot;navPropId&quot;:&quot;mesures&quot;,&quot;entityId&quot;:&quot;Measure&quot;,&quot;propertyId&quot;:&quot;total&quot;}]}"
+					sap:label="Time"/>
+				<Property Name="TUnits" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="TUnits"/>
+				<NavigationProperty Name="PartOf" Relationship="d235e02ec3cb2400148286ba.MachinesPartOfParts" FromRole="FromRole_MachinesPartOfParts"
+					ToRole="ToRole_MachinesPartOfParts"/>
+				<NavigationProperty Name="mesures" Relationship="d235e02ec3cb2400148286ba.MachinesmesuresMeasure" FromRole="FromRole_MachinesmesuresMeasure"
+					ToRole="ToRole_MachinesmesuresMeasure"/>
+			</EntityType>
+			<Association Name="MachinesPartOfParts">
+				<End Type="d235e02ec3cb2400148286ba.Machines" Multiplicity="1" Role="FromRole_MachinesPartOfParts"/>
+				<End Type="d235e02ec3cb2400148286ba.Parts" Multiplicity="*" Role="ToRole_MachinesPartOfParts"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_MachinesPartOfParts">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_MachinesPartOfParts">
+						<PropertyRef Name="___FK_539e2ccd0c38224a0c8a81df"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="MachinesmesuresMeasure">
+				<End Type="d235e02ec3cb2400148286ba.Machines" Multiplicity="1" Role="FromRole_MachinesmesuresMeasure"/>
+				<End Type="d235e02ec3cb2400148286ba.Measure" Multiplicity="*" Role="ToRole_MachinesmesuresMeasure"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_MachinesmesuresMeasure">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_MachinesmesuresMeasure">
+						<PropertyRef Name="___FK_d384bdd9b4a96a5f1482894b_00009"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="Parts">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+				<Property Name="Available" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Available"/>
+				<Property Name="Demand" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Demand"/>
+				<Property Name="Unit" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Unit"/>
+				<Property Name="Link" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Link"/>
+				<Property Name="Images" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Images"/>
+				<Property Name="___FK_539e2ccd0c38224a0c8a81df" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.Toys"/>
+			</EntityType>
+			<EntityType Name="Measure">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="___FK_d384bdd9b4a96a5f1482894b_00009" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="___FK_d384bdd9b4a96a5f1482894b_00009"/>
+				<Property Name="phase1" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="phase1"/>
+				<Property Name="phase2" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="phase2"/>
+				<Property Name="phase3" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="phase3"/>
+				<Property Name="phase4" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="phase4"/>
+				<Property Name="phase5" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="phase5"/>
+				<Property Name="total" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Measure\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;phase1\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:4,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Measure\&quot;,\&quot;propertyName\&quot;:\&quot;phase1\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Measure\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;phase2\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:5,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Measure\&quot;,\&quot;propertyName\&quot;:\&quot;phase2\&quot;}],\&quot;displayLabel\&quot;:\&quot;+\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:3,\&quot;computedType\&quot;:\&quot;number\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Measure\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;phase3\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:6,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Measure\&quot;,\&quot;propertyName\&quot;:\&quot;phase3\&quot;}],\&quot;displayLabel\&quot;:\&quot;+\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:2,\&quot;computedType\&quot;:\&quot;number\&quot;}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityId\&quot;:\&quot;Measure\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropOp\&quot;:null,\&quot;propertyId\&quot;:\&quot;phase4\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;propertyType\&quot;:\&quot;Decimal\&quot;,\&quot;isNewLine\&quot;:true,\&quot;id\&quot;:7,\&quot;computedType\&quot;:\&quot;number\&quot;,\&quot;entityName\&quot;:\&quot;Measure\&quot;,\&quot;propertyName\&quot;:\&quot;phase4\&quot;}],\&quot;displayLabel\&quot;:\&quot;+\&quot;,\&quot;isNewLine\&quot;:false,\&quot;id\&quot;:1,\&quot;computedType\&quot;:\&quot;number\&quot;}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;5fbfee846575202e1d758d4a&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Measure&quot;,&quot;propertyId&quot;:&quot;phase1&quot;},{&quot;_id&quot;:&quot;5fbfee846575202e1d758d49&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Measure&quot;,&quot;propertyId&quot;:&quot;phase2&quot;},{&quot;_id&quot;:&quot;5fbfee846575202e1d758d48&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Measure&quot;,&quot;propertyId&quot;:&quot;phase3&quot;},{&quot;_id&quot;:&quot;5fbfee846575202e1d758d47&quot;,&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;Measure&quot;,&quot;propertyId&quot;:&quot;phase4&quot;}]}"
+					sap:label="total"/>
+				<Property Name="date" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date"
+					sap:label="fecha"/>
+				<Property Name="month" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="month"/>
+			</EntityType>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

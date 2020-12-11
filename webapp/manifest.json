@@ -1,0 +1,163 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "com.sap.build.standard.inventoryDashboard",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.2.2"
+		},
+		"ach": "ach",
+		"resources": "resources.json",
+		"dataSources": {
+			"local": {
+				"uri": "/here/goes/your/serviceUrl/local/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "sap.ui.ui5-template-plugin.2masterdetail",
+			"version": "1.32.5"
+		}
+	},
+	"sap.fiori": {
+		"_version": "1.1.0",
+		"registrationIds": [],
+		"archeType": "transactional"
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.3.0",
+		"rootView": {
+			"viewName": "com.sap.build.standard.inventoryDashboard.view.App",
+			"type": "XML",
+			"async": false,
+			"id": "app"
+		},
+		"autoPrefixId": true,
+		"dependencies": {
+			"minUI5Version": "1.50.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"": {
+				"dataSource": "local",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"preload": true,
+				"settings": {
+					"loadMetadataAsync": false,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true,
+					"refreshAfterChange": false,
+					"disableHeadRequestForToken": true
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.sap.build.standard.inventoryDashboard.view",
+				"controlId": "idAppControl",
+				"clearTarget": false,
+				"controlAggregation": "detailPages",
+				"async": false,
+				"bypassed": {
+					"target": [
+						"Dashboard",
+						"1472700396089_S0"
+					]
+				}
+			},
+			"targets": {
+				"1472700396089_S0": {
+					"controlAggregation": "masterPages",
+					"viewName": "1472700396089_S0",
+					"viewId": "1472700396089_S0",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"Dashboard": {
+					"controlAggregation": "detailPages",
+					"viewName": "Dashboard",
+					"viewId": "Dashboard",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"Measure": {
+					"controlAggregation": "detailPages",
+					"viewName": "Measure",
+					"viewId": "Measure",
+					"viewLevel": 1,
+					"transition": "slide"
+				}
+			},
+			"routes": [{
+				"pattern": "1472700396089_S0",
+				"name": "1472700396089_S0",
+				"target": [
+					"Dashboard",
+					"1472700396089_S0"
+				]
+			}, {
+				"pattern": "1472700396089_S0/Dashboard/:context:",
+				"name": "Dashboard",
+				"target": [
+					"1472700396089_S0",
+					"Dashboard"
+				]
+			}, {
+				"pattern": "1472700396089_S0/Measure/:context:",
+				"name": "Measure",
+				"target": [
+					"1472700396089_S0",
+					"Measure"
+				]
+			}, {
+				"pattern": "",
+				"name": "default",
+				"target": [
+					"Dashboard",
+					"1472700396089_S0"
+				]
+			}]
+		}
+	}
+}

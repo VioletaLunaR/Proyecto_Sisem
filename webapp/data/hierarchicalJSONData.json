@@ -1,0 +1,485 @@
+{
+	"static": {},
+	"combined": {
+		"MachinesSet": [{
+			"ID": "E1",
+			"Images": "assets/rastra-andina.png",
+			"Name": "Rastra Andina",
+			"Description": "Máquina de labranza",
+			"Nodes": [{
+				"ID": "M10",
+				"Name": "Propeller",
+				"Description": "Propeller",
+				"Images": "assets/Propeller.png"
+			}, {
+				"ID": "M14",
+				"Name": "Drone Camera",
+				"Description": "Drone Camera",
+				"Images": "assets/Drone camera.png"
+			}]
+		}, {
+			"ID": "E2",
+			"Images": "assets/aradocincel.png",
+			"Name": "Arado Cincel",
+			"Description": null,
+			"Nodes": [{
+				"ID": "M1",
+				"Name": "Tire",
+				"Description": "Tires",
+				"Images": "assets/Tire.png"
+			}, {
+				"ID": "M2",
+				"Name": "Steering Wheel",
+				"Description": "Steering Wheel",
+				"Images": "assets/Steering-Wheel.png"
+			}, {
+				"ID": "M3",
+				"Name": "Side Mirror",
+				"Description": "Side Mirror",
+				"Images": "assets/Side-Mirror.png"
+			}, {
+				"ID": "M15",
+				"Name": "Bumper",
+				"Description": "Bumper",
+				"Images": "assets/Bumper.png"
+			}]
+		}, {
+			"ID": "E3",
+			"Images": "assets/cortamaleza.png",
+			"Name": "Cortamaleza",
+			"Description": null,
+			"Nodes": [{
+				"ID": "M11",
+				"Name": "Parachute",
+				"Description": "Parachute",
+				"Images": "assets/Parachute.png"
+			}]
+		}, {
+			"ID": "E4",
+			"Images": "assets/desbrozadora.png",
+			"Name": "Desbrozadora",
+			"Description": null,
+			"Nodes": [{
+				"ID": "M16",
+				"Name": "Camera",
+				"Description": "Drone Camera",
+				"Images": "assets/Drone camera.png"
+			}]
+		}, {
+			"ID": "E5",
+			"Images": "assets/pulidor-discos.png",
+			"Name": "Pulidor Discos",
+			"Description": null,
+			"Nodes": [{
+				"ID": "M13",
+				"Name": "Headphone Ear Piece",
+				"Description": "Headphone Ear Piece",
+				"Images": "assets/Headphone ear peace.png"
+			}]
+		}, {
+			"ID": "E6",
+			"Images": "assets/rotocultivadores.png",
+			"Name": "Rotocultivadores",
+			"Description": null,
+			"Nodes": [{
+				"ID": "M8",
+				"Name": "Robot Teeth",
+				"Description": "Robot Teeth",
+				"Images": "assets/Robot teeth.png"
+			}, {
+				"ID": "M9",
+				"Name": "Robot Belly",
+				"Description": "Robot Belly",
+				"Images": "assets/Robot belly.png"
+			}]
+		}, {
+			"ID": "E7",
+			"Images": "assets/sembradora.png",
+			"Name": "Sembradora",
+			"Description": null,
+			"Nodes": [{
+				"ID": "M4",
+				"Name": "Satellite Solar Panel",
+				"Description": "Satellite Solar Panel",
+				"Images": "assets/Satellite Solar Panel.png"
+			}, {
+				"ID": "M5",
+				"Name": "Satellite Bridge",
+				"Description": "Statellite Bridge",
+				"Images": "assets/Satellite Bridge.png"
+			}]
+		}],
+		"PartsSet": [{
+			"ID": "M1",
+			"Name": "Tire",
+			"Description": "Tires",
+			"Available": 297,
+			"Demand": 400,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Tire.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E2"
+		}, {
+			"ID": "M2",
+			"Name": "Steering Wheel",
+			"Description": "Steering Wheel",
+			"Available": 300,
+			"Demand": 600,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Steering-Wheel.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E2"
+		}, {
+			"ID": "M3",
+			"Name": "Side Mirror",
+			"Description": "Side Mirror",
+			"Available": 250,
+			"Demand": 500,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Side-Mirror.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E2"
+		}, {
+			"ID": "M4",
+			"Name": "Satellite Solar Panel",
+			"Description": "Satellite Solar Panel",
+			"Available": 400,
+			"Demand": 700,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Satellite Solar Panel.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E7"
+		}, {
+			"ID": "M5",
+			"Name": "Satellite Bridge",
+			"Description": "Statellite Bridge",
+			"Available": 250,
+			"Demand": 450,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Satellite Bridge.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E7"
+		}, {
+			"ID": "M6",
+			"Name": "Rocket window",
+			"Description": "Rocket Window",
+			"Available": 400,
+			"Demand": 650,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Rocket window.png",
+			"___FK_539e2ccd0c38224a0c8a81df": null
+		}, {
+			"ID": "M7",
+			"Name": "Rocket leg",
+			"Description": "Rocket Leg",
+			"Available": 85,
+			"Demand": 200,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Rocket leg.png",
+			"___FK_539e2ccd0c38224a0c8a81df": null
+		}, {
+			"ID": "M8",
+			"Name": "Robot Teeth",
+			"Description": "Robot Teeth",
+			"Available": 350,
+			"Demand": 500,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Robot teeth.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E6"
+		}, {
+			"ID": "M9",
+			"Name": "Robot Belly",
+			"Description": "Robot Belly",
+			"Available": 280,
+			"Demand": 580,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Robot belly.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E6"
+		}, {
+			"ID": "M10",
+			"Name": "Propeller",
+			"Description": "Propeller",
+			"Available": 150,
+			"Demand": 250,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Propeller.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E1"
+		}, {
+			"ID": "M11",
+			"Name": "Parachute",
+			"Description": "Parachute",
+			"Available": 297,
+			"Demand": 400,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Parachute.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E3"
+		}, {
+			"ID": "M12",
+			"Name": "HoverCraft Body",
+			"Description": "Hover Craft Body",
+			"Available": 300,
+			"Demand": 600,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/HoverCraft body.png",
+			"___FK_539e2ccd0c38224a0c8a81df": null
+		}, {
+			"ID": "M13",
+			"Name": "Headphone Ear Piece",
+			"Description": "Headphone Ear Piece",
+			"Available": 250,
+			"Demand": 500,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Headphone ear peace.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E5"
+		}, {
+			"ID": "M14",
+			"Name": "Drone Camera",
+			"Description": "Drone Camera",
+			"Available": 400,
+			"Demand": 700,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Drone camera.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E1"
+		}, {
+			"ID": "M15",
+			"Name": "Bumper",
+			"Description": "Bumper",
+			"Available": 250,
+			"Demand": 450,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Bumper.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E2"
+		}, {
+			"ID": "M16",
+			"Name": "Camera",
+			"Description": "Drone Camera",
+			"Available": 400,
+			"Demand": 750,
+			"Unit": "Units",
+			"Link": null,
+			"Images": "assets/Drone camera.png",
+			"___FK_539e2ccd0c38224a0c8a81df": "E4"
+		}],
+		"MeasureSet": [{
+			"ID": "1",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 2,
+			"phase2": 2,
+			"phase3": 4,
+			"phase4": 2,
+			"phase5": 2,
+			"total": null,
+			"month": "Septiembre"
+		}, {
+			"ID": "2",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 1,
+			"phase2": 2,
+			"phase3": 5,
+			"phase4": 2,
+			"phase5": 3,
+			"total": null,
+			"month": "Septiembre"
+		}, {
+			"ID": "3",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 3,
+			"phase2": 2,
+			"phase3": 6,
+			"phase4": 3,
+			"phase5": 2,
+			"total": null,
+			"month": "Septiembre"
+		}, {
+			"ID": "4",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 2,
+			"phase2": 2,
+			"phase3": 5,
+			"phase4": 2,
+			"phase5": 3,
+			"total": null,
+			"month": "Septiembre"
+		}, {
+			"ID": "5",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E2",
+			"phase1": 3,
+			"phase2": 3,
+			"phase3": 6,
+			"phase4": 3,
+			"phase5": 2,
+			"total": null,
+			"month": "Septiembre"
+		}, {
+			"ID": "6",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E2",
+			"phase1": 2,
+			"phase2": 1,
+			"phase3": 7,
+			"phase4": 2,
+			"phase5": 3,
+			"total": null,
+			"month": "Septiembre"
+		}, {
+			"ID": "7",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E2",
+			"phase1": 1,
+			"phase2": 1,
+			"phase3": 5,
+			"phase4": 3,
+			"phase5": 3,
+			"total": null,
+			"month": "Septiembre"
+		}, {
+			"ID": "8",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E3",
+			"phase1": 2,
+			"phase2": 2,
+			"phase3": 4,
+			"phase4": 2,
+			"phase5": 2,
+			"total": null,
+			"month": "Septiembre"
+		}, {
+			"ID": "9",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E3",
+			"phase1": 4,
+			"phase2": 4,
+			"phase3": 6,
+			"phase4": 1,
+			"phase5": 3,
+			"total": null,
+			"month": "Septiembre"
+		}, {
+			"ID": "10",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 2,
+			"phase2": 1,
+			"phase3": 5,
+			"phase4": 2,
+			"phase5": 2,
+			"total": null,
+			"month": "Octubre"
+		}, {
+			"ID": "11",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 3,
+			"phase2": 2,
+			"phase3": 6,
+			"phase4": 1,
+			"phase5": 2,
+			"total": null,
+			"month": "Octubre"
+		}, {
+			"ID": "12",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 2,
+			"phase2": 3,
+			"phase3": 4,
+			"phase4": 2,
+			"phase5": 2,
+			"total": null,
+			"month": "Octubre"
+		}, {
+			"ID": "13",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 2,
+			"phase2": 1,
+			"phase3": 6,
+			"phase4": 1,
+			"phase5": 3,
+			"total": null,
+			"month": "Octubre"
+		}, {
+			"ID": "14",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E2",
+			"phase1": 3,
+			"phase2": 2,
+			"phase3": 4,
+			"phase4": 2,
+			"phase5": 3,
+			"total": null,
+			"month": "Octubre"
+		}, {
+			"ID": "15",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E2",
+			"phase1": 2,
+			"phase2": 3,
+			"phase3": 5,
+			"phase4": 2,
+			"phase5": 3,
+			"total": null,
+			"month": "Octubre"
+		}, {
+			"ID": "16",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E2",
+			"phase1": 4,
+			"phase2": 1,
+			"phase3": 6,
+			"phase4": 2,
+			"phase5": 3,
+			"total": null,
+			"month": "Octubre"
+		}, {
+			"ID": "17",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E3",
+			"phase1": 2,
+			"phase2": 2,
+			"phase3": 4,
+			"phase4": 1,
+			"phase5": 2,
+			"total": null,
+			"month": "Octubre"
+		}, {
+			"ID": "18",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E3",
+			"phase1": 3,
+			"phase2": 4,
+			"phase3": 3,
+			"phase4": 2,
+			"phase5": 5,
+			"total": null,
+			"month": "Octubre"
+		}, {
+			"ID": "19",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E3",
+			"phase1": 2,
+			"phase2": 3,
+			"phase3": 2,
+			"phase4": 2,
+			"phase5": 2,
+			"total": null,
+			"month": "Noviembre"
+		}, {
+			"ID": "20",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 3,
+			"phase2": 4,
+			"phase3": 3,
+			"phase4": 3,
+			"phase5": 3,
+			"total": null,
+			"month": "Noviembre"
+		}, {
+			"ID": "21",
+			"___FK_d384bdd9b4a96a5f1482894b_00009": "E1",
+			"phase1": 5,
+			"phase2": 4,
+			"phase3": 2,
+			"phase4": 2,
+			"phase5": 4,
+			"total": null,
+			"month": "Noviembre"
+		}]
+	}
+}

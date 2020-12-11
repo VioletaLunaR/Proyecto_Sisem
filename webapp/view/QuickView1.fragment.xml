@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.inventoryDashboard.controller.QuickView1"
+	xmlns="sap.m">
+	<QuickView placement="Auto" width="320px">
+		<pages/>
+	</QuickView>
+</core:FragmentDefinition>

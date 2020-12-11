@@ -1,0 +1,86 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.inventoryDashboard.controller.Measure" xmlns="sap.m">
+	<Page title="Measure" showHeader="true" showFooter="true" showNavButton="false">
+		<content>
+			<SegmentedButton width="auto" enabled="true" visible="true" class="sapUiResponsiveMargin">
+				<items>
+					<SegmentedButtonItem icon="sap-icon://bbyd-dashboard" text="Dashboard" width="auto" enabled="true" press="_onSegmentedButtonItemPress"/>
+				</items>
+			</SegmentedButton>
+			<ObjectHeader intro="" title="{Name}" icon="{Images}"
+				number="{path: 'Time', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" numberUnit="{TUnits}" numberState="None"
+				backgroundDesign="Transparent" condensed="false" visible="true">
+				<attributes>
+					<ObjectAttribute title="Precio" text="{path: 'Cost', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}"
+						active="false" visible="true"/>
+				</attributes>
+				<statuses/>
+				<markers/>
+			</ObjectHeader>
+			<Label text="Fase 1: corte" design="Bold" width="30%" required="false" textAlign="Center" textDirection="Inherit" visible="true"
+				class="sapUiSmallMarginTop sapUiSmallMarginBottom"/>
+			<Button text="Iniciar" type="Accept" iconFirst="true" width="100px" enabled="true" visible="true" iconDensityAware="false"
+				class="sapUiMediumMarginBegin sapUiMediumMarginEnd" press="_onButtonPressI1" id="btnI1"/>
+			<Button text="Terminar" type="Reject" iconFirst="true" width="100px" enabled="true" visible="true" iconDensityAware="false"
+				class="sapUiSmallMarginBottom sapUiMediumMarginBegin sapUiLargeMarginEnd" press="_onButtonPressT1" id="btnT1" />
+			<TextArea rows="1" cols="20" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true"
+				class="sapUiLargeMarginBegin" id="ph1-txt"/>
+			<Label text="Fase 2: pulir" design="Bold" width="30%" required="false" textAlign="Center" textDirection="Inherit" visible="true"
+				class="sapUiSmallMarginTop sapUiSmallMarginBottom"/>
+			<Button text="Iniciar" type="Accept" iconFirst="true" width="100px" enabled="false" visible="true" iconDensityAware="false"
+				class="sapUiMediumMarginBegin sapUiMediumMarginEnd" press="_onButtonPressI2" id="btnI2"/>
+			<Button text="Terminar" type="Reject" iconFirst="true" width="100px" enabled="false" visible="true" iconDensityAware="false"
+				class="sapUiSmallMarginBottom sapUiMediumMarginBegin sapUiLargeMarginEnd" press="_onButtonPressT2" id="btnT2"/>
+			<TextArea rows="1" cols="20" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true"
+				class="sapUiLargeMarginBegin" id="ph2-txt"/>
+			<Label text="Fase 3: ensamble" design="Bold" width="30%" required="false" textAlign="Center" textDirection="Inherit" visible="true"
+				class="sapUiSmallMarginTop sapUiSmallMarginBottom"/>
+			<Button text="Iniciar" type="Accept" iconFirst="true" width="100px" enabled="false" visible="true" iconDensityAware="false"
+				class="sapUiMediumMarginBegin sapUiMediumMarginEnd" press="_onButtonPressI3" id="btnI3"/>
+			<Button text="Terminar" type="Reject" iconFirst="true" width="100px" enabled="false" visible="true" iconDensityAware="false"
+				class="sapUiSmallMarginBottom sapUiMediumMarginBegin sapUiLargeMarginEnd" press="_onButtonPressT3" id="btnT3"/>
+			<TextArea rows="1" cols="20" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true"
+				class="sapUiLargeMarginBegin" id="ph3-txt"/>
+			<Label text="Fase 4: pintura" design="Bold" width="30%" required="false" textAlign="Center" textDirection="Inherit" visible="true"
+				class="sapUiSmallMarginTop sapUiSmallMarginBottom"/>
+			<Button text="Iniciar" type="Accept" iconFirst="true" width="100px" enabled="false" visible="true" iconDensityAware="false"
+				class="sapUiMediumMarginBegin sapUiMediumMarginEnd" press="_onButtonPressI4" id="btnI4"/>
+			<Button text="Terminar" type="Reject" iconFirst="true" width="100px" enabled="false" visible="true" iconDensityAware="false"
+				class="sapUiSmallMarginBottom sapUiMediumMarginBegin sapUiLargeMarginEnd" press="_onButtonPressT4" id="btnT4"/>
+			<TextArea rows="1" cols="20" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true"
+				class="sapUiLargeMarginBegin" id="ph4-txt"/>
+			<Label text="Fase 5: prueba" design="Bold" width="30%" required="false" textAlign="Center" textDirection="Inherit" visible="true"
+				class="sapUiSmallMarginTop sapUiLargeMarginBottom" />
+			<Button text="Iniciar" type="Accept" iconFirst="true" width="100px" enabled="false" visible="true" iconDensityAware="false"
+				class="sapUiMediumMarginBegin sapUiMediumMarginEnd" press="_onButtonPressI5" id="btnI5"/>
+			<Button text="Terminar" type="Reject" iconFirst="true" width="100px" enabled="false" visible="true" iconDensityAware="false"
+				class="sapUiSmallMarginBottom sapUiMediumMarginBegin sapUiLargeMarginEnd" press="_onButtonPressT5" id="btnT5"/>
+			<TextArea rows="1" cols="20" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true"
+				class="sapUiLargeMarginBegin" id="ph5-txt"/>
+			<Label text="Tiempo Total" design="Bold" width="30%" required="false" textAlign="Center" textDirection="Inherit" visible="true"
+				class="sapUiMediumMarginTop sapUiSmallMarginBottom sapUiLargeMarginBegin"/>
+			<TextArea rows="1" cols="48" maxLength="0" wrapping="None" enabled="false" required="false" valueStateText="Invalid entry" visible="true"
+				class="sapUiMediumMarginTop sapUiMediumMarginBegin sapUiLargeMarginEnd" id="total-txt"/>
+			<Label text="" design="Bold" width="30%" required="false" textAlign="Center" textDirection="Inherit" visible="true"
+				class="sapUiMediumMarginTop sapUiSmallMarginBottom sapUiTinyMarginBegin"/>
+			<SegmentedButton width="auto" enabled="true" visible="true" class="sapUiSmallMarginBegin sapUiLargeMarginTop">
+				<items>
+					<SegmentedButtonItem icon="sap-icon://save" text="Guardar registro" width="auto" enabled="false" press="_onSegmentedPressSave" id="btnSave"/>
+				</items>
+			</SegmentedButton>
+			<SegmentedButton width="auto" enabled="true" visible="true" class="sapUiLargeMarginBegin sapUiLargeMarginTop">
+				<items>
+					<SegmentedButtonItem icon="sap-icon://delete" text="Eliminar registros" width="auto" enabled="true" press="_onSegmentedPressDelete" id="btnDelete"/>
+				</items>
+			</SegmentedButton>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="auto" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="" type="Default" icon="sap-icon://action" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+	</Page>
+</mvc:View>

@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<ViewSettingsDialog>
+		<sortItems>
+			<ViewSettingsItem text="Día" key="date"/>
+			<ViewSettingsItem text="Fase 1: Corte" key="phase1"/>
+			<ViewSettingsItem text="Fase 2: Pulir" key="phase2"/>
+			<ViewSettingsItem text="Fase 3: Ensamble" key="phase3"/>
+			<ViewSettingsItem text="Fase 4: Pintura" key="phase4"/>
+			<ViewSettingsItem text="Fase 5: Prueba" key="phase5"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>
